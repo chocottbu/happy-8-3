@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Chúc mừng 8/3</title>
+
+<style>
+
+body{
+margin:0;
+background:linear-gradient(135deg,#000000,#1a001a);
+font-family:Arial;
+overflow:hidden;
+color:black;
+}
+
+/* ảnh */
+
+.bg{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+max-width:100%;
+max-height:100%;
+border-radius:20px;
+box-shadow:0 0 40px pink;
+opacity:0;
+transition:opacity 2s;
+}
+
+.bg.active{
+opacity:1;
+}
+
+/* nút */
+
+#start{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:40px;
+padding:30px 80px;
+border:none;
+border-radius:15px;
+background:#ff4d88;
+color:white;
+cursor:pointer;
+z-index:10;
+}
+
+/* chữ */
+
+#text{
+position:absolute;
+top:40%;
+width:100%;
+text-align:center;
+font-size:80px;
+font-weight:bold;
+opacity:0;
+transition:opacity 3s;
+text-shadow:0 0 30px pink;
+}
+
+/* nút dặn dò */
+
+#adviceBtn{
+
+position:absolute;
+bottom:80px;
+left:50%;
+transform:translateX(-50%);
+padding:18px 50px;
+font-size:26px;
+border:none;
+border-radius:15px;
+background:#ff4d88;
+color:white;
+cursor:pointer;
+display:none;
+box-shadow:0 0 20px pink;
+
+}
+
+/* khung thư */
+
+#adviceBox{
+
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:70%;
+max-height:75%;
+background:white;
+color:black;
+border-radius:25px;
+padding:40px;
+overflow-y:auto;
+display:none;
+box-shadow:0 0 40px pink;
+
+}
+
+#adviceBox .content{
+
+text-align:justify;
+line-height:1.8;
+font-size:18px;
+
+}
+
+/* hoa rơi */
+
+.flower{
+position:absolute;
+top:-50px;
+font-size:28px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+0%{transform:translateY(-50px)}
+100%{transform:translateY(110vh)}
+}
+
+/* tim */
+
+.heart{
+position:absolute;
+color:pink;
+font-size:20px;
+animation:up 4s linear forwards;
+}
+
+@keyframes up{
+0%{transform:translateY(0);opacity:1}
+100%{transform:translateY(-200px);opacity:0}
+}
+
+canvas{
+position:absolute;
+top:0;
+left:0;
+pointer-events:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<img class="bg" src="8-3-1.jpg">
+<img class="bg" src="8-3-2.jpg">
+<img class="bg" src="8-3-3.jpg">
+<img class="bg" src="8-3-4.jpg">
+
+<button id="start">BẮT ĐẦU</button>
+
+<div id="text">💗CHÚC MỪNG THƯ NGÀY 8/3💗</div>
+
+<button id="adviceBtn">DẶN DÒ</button>
+
+<div id="adviceBox">
+
+<div class="content">
+
+<p><b>CHÚC THƯ THẬT NHIỀU SỨC KHOẺ, THẬT NHIỀU NĂNG LƯỢNG VÀ HỌC THẬT GIỎI, LUÔN TƯƠI CƯỜI TRONG CUỘC SỐNG ❤️</b></p>
+
+<p>Đây là những điều mong muốn Thư hãy nhớ mãi và vận dụng trong cuộc sống:</p>
+
+<p><b>1.</b> Thư hãy luôn thật bình tĩnh trong mọi tình huống, không được nóng giận và phải giữ cái đầu lạnh, luôn tìm ra hướng giải quyết chứ không phải suy nghĩ bàn lùi.</p>
+
+<p><b>2.</b> Phải biết con người luôn cần đối mặt với khó khăn để hoàn thiện bản thân, đừng bao giờ nản chí và từ bỏ, đừng bao giờ suy nghĩ tiêu cực mà hãy nghĩ tích cực hơn.</p>
+
+<p><b>3.</b> Hãy cười thật nhiều vì chỉ sống được một đời, đừng để hối hận trong những lúc không được cười, hãy cười thật nhiều để có những kí ức tốt đẹp dù buồn cũng nhớ lại.</p>
+
+<p><b>4.</b> Không được quên bản thân mình, đừng quan tâm người khác quá nhiều. Cuộc sống đầy rẫy vấn đề cần giải quyết, nhưng đừng vì thế mà quên đi bản thân mình cần gì và muốn gì, hãy đáp ứng và làm hài lòng bản thân, nhưng đừng dung túng cho bản thân để trở nên lười biếng. Cũng đừng bỏ bê bản thân mà chỉ giúp đỡ người khác. Lợi ích của bản thân là quan trọng nhất.</p>
+
+<p><b>5.</b> Không ai sinh ra đều giống nhau, đừng luôn nghĩ cho người khác, mà cũng đừng luôn so sánh mình với người khác. Luôn tìm kiếm những thứ tích cực từ người khác và học hỏi. Đừng so sánh để rồi tự ti về bản thân.</p>
+
+<p><b>6.</b> Khi lãnh đạo cần chú ý rất nhiều điều quan trọng, nhưng bản thân Thư cần biết, lãnh đạo không phải việc gì bản thân cũng đích thân làm. Họ làm không được không có nghĩa là bản thân phải nhảy vào làm vì sợ không đúng ý mình và không đạt được mục tiêu. Có thể chỉ một hai lần để họ hiểu nhưng không phải là trực tiếp làm. Hãy cho họ cơ hội để sửa sai và tự hoàn thiện, nếu nhiều lần họ làm không được thì họ là người không thể giữ lại. Không cần phải thấy bực bội hay mệt mỏi vì người khác làm không đúng ý mình. Bây giờ còn sớm, còn trải nghiệm được thất bại là còn có thể hoàn thiện bản thân để sau này đối diện với những công việc lớn hơn thì đã có kinh nghiệm lãnh đạo người rồi. Việc em luôn làm lãnh đạo trong mỗi việc thầy cô giao là việc đáng khen và không có gì sợ sai cả.</p>
+
+<p><b>7.</b> Không nên tự tạo áp lực cho bản thân quá nhiều, dẫu biết áp lực là thứ rèn luyện chúng ta nhưng không phải là luôn gượng ép bản thân phải đạt mục tiêu cao, yêu cầu với bản thân quá cao rồi gây áp lực vô hình không vốn có. Hãy thả lỏng bản thân khi có thể, dành một ít thời gian mỗi ngày để thả lỏng toàn bộ cơ thể, hoặc nghe nhạc và tập yoga nếu Thư thích.</p>
+
+<p><b>8.</b> Cần có sức khoẻ, không có sức khoẻ thì không thể làm việc gì được. Cần biết cân bằng giữa học tập, giải trí và rèn luyện thân thể. Mỗi lần đánh cầu lông, nhảy dây tập thể dục đã là rèn luyện sức khoẻ, Thư như vậy là tốt.</p>
+
+<p><b>9.</b> Học trong trường lớp không phải là tất cả, hầu hết mọi thứ để sống được trong cuộc sống cần học ở ngoài. Thư cần dành thời gian tìm hiểu hơn về xã hội, đời sống và kiến thức bên ngoài.</p>
+
+<p><b>10.</b> Vấp ngã không phải là tất cả, vấp ngã là một phần của cuộc sống để chúng ta nhìn nhận lại bản thân và việc chúng ta đang làm. Đôi khi cần lùi lại để tiến lên, quan sát mọi thứ thật toàn vẹn.</p>
+
+<p><b>11.</b> Cần quan sát mọi thứ toàn diện. Phải suy nghĩ từ nhiều phía, không nên chỉ suy nghĩ một vấn đề quá phiến diện. Đôi khi cần phải đặt câu hỏi tại sao, tại sao họ lại làm vậy, tại sao nó lại như thế, hay như thế có hợp lí không, có đúng không.</p>
+
+<p><b>12.</b> Luôn phải biết chừa đường sống cho bản thân trong mọi tình huống. Không phải việc gì cũng cần hết tâm sức và tình cảm, công sức rồi khi thất bại sẽ thất vọng. Nhưng cũng không phải vì thế mà qua loa trong mọi chuyện và mọi việc.</p>
+
+<p><b>13.</b> Đừng luôn nói mà hãy làm. Không có nghĩa là luôn làm mà không nói, đừng làm một thứ gì đó quá mức. Hãy cân bằng mọi thứ. Nói nhiều mà không làm chỉ khiến bản thân trở thành kẻ khoác loác khoe khoang. Chỉ có hành động mới có thể chứng minh.</p>
+
+<p><b>14.</b> Hãy sử dụng sức mạnh của lời nói. Lời nói là thứ có thể thuyết phục lòng người, lập luận biến không thành có, có thành không. Lời nói là thứ có sức mạnh an ủi, nâng đỡ cũng có thể dìm bất cứ ai đó xuống. Hãy học cách phản biện, học cách ăn nói cho chuẩn, học cách lập luận lí lẽ để không bị thiệt thòi khi nói chuyện với bất cứ ai.</p>
+
+<p><b>15.</b> Không phải mọi thứ đều theo ý muốn của bản thân mình. Không ai có thể định đoạt được bản thân mình. Đừng để chỉ vì nghe vài lời khó nghe, lăng mạ, ô nhục hay xỉa xói mà cảm thấy tự ti buồn bã. Đừng luôn sống để đáp ứng những gì người đời mong muốn, miệng đời luôn luôn không thể đoán trước được. Khi Thư giúp đỡ ai đó thì người ghét có thể nói Thư giả tạo, khi Thư lựa chọn không giúp đỡ họ lại bảo là vô tâm, khi giúp đỡ một ít thì họ lại bảo là cho có, làm màu. Không bao giờ có thể đáp ứng được miệng đời, đừng để bản thân bị biến chất vì miệng lưỡi người khác, mà hãy sống sao cho bản thân hài lòng. Cuộc đời chỉ là một cuộc dạo chơi, hãy sống sao cho đừng hối tiếc.</p>
+
+<p> - Đây không phải là tất cả, không phải chỉ cần đọc một hai lần là có thể hiểu được mà phải trải nghiệm qua cuộc sống, nhưng biết trước, lắng nghe học hỏi từ những người đi trước như đọc sách, đọc những gì anh viết đây thì sẽ giảm thiểu được những gì cần trả giá để học được những bài học này. Tuy anh chưa phải là một người nói được và làm được nhưng anh mong muốn em sẽ luôn nhớ hết những lời anh dặn và tiếp tục trải nghiệm đúc kết thêm trong cuộc sống, học là con đường ngắn nhất để dẫn đến thành công. Mong Thư có thể quan tâm bản thân quyết định được bản thân mình muốn gì để lựa chọn nghành nghề mình muốn học và nghề nghiệp trong tương lai. Xã hội không cần nỗ lực, chỉ cần kết quả. Nỗ lực là một phần để đến thành công, tuy người ta chỉ công nhận kết quả nhưng bản thân biết được nếu muốn đạt được mục tiêu phải nỗ lực như thế nào và biết được ngày mai phải tốt hơn ngày hôm nay của bản thân mình là đươc. ❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎❤︎</p>
+
+<p style="text-align:center;">❤︎❤︎❤︎</p>
+
+</div>
+</div>
+
+<canvas id="canvas"></canvas>
+
+<script>
+
+/* ảnh */
+
+let bg=document.querySelectorAll(".bg")
+let index=0
+let start=false
+
+function changeBG(){
+
+if(!start) return
+
+bg[index].classList.remove("active")
+
+index++
+if(index>=bg.length) index=0
+
+bg[index].classList.add("active")
+
+}
+
+setInterval(changeBG,5000)
+
+/* hoa rơi */
+
+function flowerRain(){
+
+setInterval(()=>{
+
+let f=document.createElement("div")
+f.className="flower"
+f.innerHTML="🌸"
+f.style.left=Math.random()*100+"%"
+
+let t=4+Math.random()*3
+f.style.animationDuration=t+"s"
+
+document.body.appendChild(f)
+
+setTimeout(()=>f.remove(),t*1000)
+
+},300)
+
+}
+
+/* tim */
+
+function hearts(){
+
+setInterval(()=>{
+
+let h=document.createElement("div")
+h.className="heart"
+h.innerHTML="❤"
+
+h.style.left=Math.random()*100+"%"
+h.style.bottom="0"
+
+document.body.appendChild(h)
+
+setTimeout(()=>h.remove(),4000)
+
+},500)
+
+}
+
+/* pháo hoa */
+
+const canvas=document.getElementById("canvas")
+const ctx=canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let particles=[]
+
+function firework(){
+
+let x=Math.random()*canvas.width
+let y=Math.random()*canvas.height/2
+
+for(let i=0;i<60;i++){
+
+particles.push({
+x:x,
+y:y,
+vx:(Math.random()-0.5)*6,
+vy:(Math.random()-0.5)*6,
+life:80
+})
+
+}
+
+}
+
+function update(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+for(let p of particles){
+
+ctx.fillStyle="hsl("+Math.random()*360+",100%,60%)"
+ctx.fillRect(p.x,p.y,3,3)
+
+p.x+=p.vx
+p.y+=p.vy
+p.life--
+
+}
+
+particles=particles.filter(p=>p.life>0)
+
+requestAnimationFrame(update)
+
+}
+
+update()
+
+/* bắt đầu */
+
+document.getElementById("start").onclick=function(){
+
+this.style.display="none"
+
+start=true
+bg[0].classList.add("active")
+
+flowerRain()
+hearts()
+
+let fw=setInterval(firework,700)
+
+setTimeout(()=>{
+
+clearInterval(fw)
+document.getElementById("text").style.opacity=1
+
+},4000)
+
+setTimeout(()=>{
+document.getElementById("adviceBtn").style.display="block"
+},7000)
+
+}
+
+/* mở dặn dò */
+
+document.getElementById("adviceBtn").onclick=function(){
+
+document.getElementById("adviceBox").style.display="block"
+
+}
+
+</script>
+
+</body>
+</html>
